@@ -25,7 +25,7 @@ def fetch_poster(movie_id):
     poster_path = data['poster_path']
     full_path = f"https://image.tmdb.org/t/p/w500{poster_path}"
     return full_path
-
+###
 # Streamlit UI
 st.title("Movie Recommendation System")
 
