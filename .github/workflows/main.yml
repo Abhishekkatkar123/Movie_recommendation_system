@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 
-  # To run this workflow manually from the Actions tab
+  # to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -14,18 +14,7 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-          
-      # Fetch the latest changes from the remote repository
-      - name: Fetch latest changes
-        run: git fetch origin main
-
-      # Merge the changes to avoid conflicts
-      - name: Merge remote changes
-        run: git pull origin main
-      
-      # Push the changes to the Hugging Face hub
       - name: Push to hub
-      'git pull'
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: git push https://abhishekkatkar04:$HF_TOKEN@huggingface.co/spaces/abhishekkatkar04/movie_recommendation_system main
