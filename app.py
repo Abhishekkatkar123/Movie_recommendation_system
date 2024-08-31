@@ -16,7 +16,7 @@ def get_recommendations(title, cosine_sim=cosine_sim):
     movie_indices = [i[0] for i in sim_scores]
     return movies[['title', 'movie_id']].iloc[movie_indices]
 
-# Fetch movie poster from TMDB API
+### Fetch movie poster from TMDB API
 def fetch_poster(movie_id):
     api_key = '7b995d3c6fd91a2284b4ad8cb390c7b8'  # Replace with your TMDB API key
     url = f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}'
