@@ -1,5 +1,4 @@
 name: Sync to Hugging Face hub
-
 on:
   push:
     branches: [main]
@@ -15,10 +14,6 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-
-      - name: Pull latest changes from Hugging Face Hub
-        run: git pull origin main
-
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
